@@ -1,0 +1,143 @@
+{
+  "case_id": "silent-schema-mutation-001",
+  "representation": "challenge_trace",
+  "note": "Challenge/benchmark trace representation. Not every field is claimed to be natively emitted by OpenTelemetry.",
+  "runtime": {
+    "framework": "Python Custom Async Agent Pipeline / FastAPI Orchestrator",
+    "python": "3.11.x",
+    "otel_api": "1.26.0",
+    "otel_sdk": "1.26.0"
+  },
+  "workflow_id": "wf-market-analysis-v4",
+  "run_id": "run-8f92a1b0-20260824-001",
+  "schema_version": "1.0.0",
+  "status": "success",
+  "steps": [
+    {
+      "step_id": "step-01-researcher",
+      "agent_id": "ResearcherAgent",
+      "sequence": 1,
+      "attempt_id": 1,
+      "status": "success",
+      "input": {
+        "target_market": "fintech"
+      },
+      "output": {
+        "raw_data": [
+          "metrics_a",
+          "metrics_b"
+        ],
+        "metrics": {
+          "schema_version": "v2.1",
+          "confidence_score": 0.94
+        }
+      },
+      "state_before": {},
+      "state_after": {
+        "raw_data": [
+          "metrics_a",
+          "metrics_b"
+        ],
+        "metrics": {
+          "schema_version": "v2.1",
+          "confidence_score": 0.94
+        }
+      },
+      "state_diff": {
+        "removed": [],
+        "added": [
+          "raw_data",
+          "metrics"
+        ],
+        "changed": []
+      }
+    },
+    {
+      "step_id": "step-02-planner",
+      "agent_id": "PlannerAgent",
+      "sequence": 2,
+      "attempt_id": 1,
+      "status": "success",
+      "input": {
+        "raw_data": [
+          "metrics_a",
+          "metrics_b"
+        ],
+        "metrics": {
+          "schema_version": "v2.1",
+          "confidence_score": 0.94
+        }
+      },
+      "output": {
+        "execution_plan": [
+          "step_1",
+          "step_2"
+        ],
+        "metrics": {
+          "confidence_score": 0.94
+        }
+      },
+      "state_before": {
+        "raw_data": [
+          "metrics_a",
+          "metrics_b"
+        ],
+        "metrics": {
+          "schema_version": "v2.1",
+          "confidence_score": 0.94
+        }
+      },
+      "state_after": {
+        "execution_plan": [
+          "step_1",
+          "step_2"
+        ],
+        "metrics": {
+          "confidence_score": 0.94
+        }
+      },
+      "state_diff": {
+        "removed": [
+          "metrics.schema_version",
+          "raw_data"
+        ],
+        "added": [
+          "execution_plan"
+        ],
+        "changed": []
+      }
+    },
+    {
+      "step_id": "step-03-analyst",
+      "agent_id": "AnalystAgent",
+      "sequence": 3,
+      "attempt_id": 1,
+      "status": "success",
+      "input": {
+        "execution_plan": [
+          "step_1",
+          "step_2"
+        ],
+        "metrics": {
+          "confidence_score": 0.94
+        }
+      },
+      "output": {
+        "risk_assessment": "Unverified State - Fallback to Moderate"
+      }
+    },
+    {
+      "step_id": "step-04-writer",
+      "agent_id": "WriterAgent",
+      "sequence": 4,
+      "attempt_id": 1,
+      "status": "success",
+      "input": {
+        "risk_assessment": "Unverified State - Fallback to Moderate"
+      },
+      "output": {
+        "final_report": "Executive Summary: Risk Level is Unverified State - Fallback to Moderate."
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "native_or_runtime": {
+    "trace_id": "Native OTel runtime identifier; dynamically generated per execution.",
+    "span_id": "Native OTel runtime identifier; dynamically generated per span.",
+    "parent_span_id": "Native OTel span relationship/context."
+  },
+  "application_level": {
+    "agent.name": "Application-defined span attribute.",
+    "workflow_id": "Application-level orchestration context."
+  },
+  "synthetic_canonical": {
+    "step_id": "Post-execution challenge packaging identifier.",
+    "parent_step_id": "Post-execution canonical mapping.",
+    "handoff_id": "Post-execution canonical boundary marker."
+  }
+}

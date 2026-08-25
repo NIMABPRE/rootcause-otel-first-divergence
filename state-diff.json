@@ -1,0 +1,44 @@
+{
+  "case_id": "silent-schema-mutation-001",
+  "boundary": "ResearcherAgent -> PlannerAgent",
+  "first_divergence": {
+    "agent_id": "PlannerAgent",
+    "step_id": "step-02-planner",
+    "sequence": 2,
+    "mutation_type": "field_removal",
+    "target_field": "metrics.schema_version"
+  },
+  "before": {
+    "raw_data": [
+      "metrics_a",
+      "metrics_b"
+    ],
+    "metrics": {
+      "schema_version": "v2.1",
+      "confidence_score": 0.94
+    }
+  },
+  "after": {
+    "execution_plan": [
+      "step_1",
+      "step_2"
+    ],
+    "metrics": {
+      "confidence_score": 0.94
+    }
+  },
+  "removed": [
+    "metrics.schema_version",
+    "raw_data"
+  ],
+  "added": [
+    "execution_plan"
+  ],
+  "changed": [],
+  "observability": {
+    "span_status": "STATUS_CODE_OK",
+    "exception_or_error_event": false,
+    "observable_via_state_comparison": true,
+    "claim_scope": "challenge/application-state evidence"
+  }
+}
